@@ -20,7 +20,7 @@ import org.una.laboratorio2.entities.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Lab2_DoctoresDTO {
+public class Lab2DoctoresDTO {
     
     private Long id;
     

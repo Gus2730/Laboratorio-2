@@ -39,7 +39,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Lab2_Doctores {
+public class Lab2Doctores {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,7 +51,7 @@ public class Lab2_Doctores {
     @Column(length = 25, unique = true)
     private String codigo;
     
-    @Column(length = 25, unique = true)
+    @Column(length = 25)
     private String especialidad;
  
     @Column
