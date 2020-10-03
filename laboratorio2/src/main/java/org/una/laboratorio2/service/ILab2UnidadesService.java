@@ -18,7 +18,7 @@ public interface ILab2UnidadesService {
 
     public Optional<Lab2UnidadesDTO> findById(Long id);
 
-    public Lab2UnidadesDTO create(Lab2UnidadesDTO usuario);
+    public Lab2UnidadesDTO create(Lab2UnidadesDTO unidad);
 
-    public Optional<Lab2UnidadesDTO> update(Lab2UnidadesDTO usuario, Long id);
+    public Optional<Lab2UnidadesDTO> update(Lab2UnidadesDTO unidad, Long id);
 }

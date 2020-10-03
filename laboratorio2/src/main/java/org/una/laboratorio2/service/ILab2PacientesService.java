@@ -18,7 +18,7 @@ public interface ILab2PacientesService {
 
     public Optional<Lab2PacientesDTO> findById(Long id);
 
-    public Lab2PacientesDTO create(Lab2PacientesDTO usuario);
+    public Lab2PacientesDTO create(Lab2PacientesDTO paciente);
 
-    public Optional<Lab2PacientesDTO> update(Lab2PacientesDTO usuario, Long id);
+    public Optional<Lab2PacientesDTO> update(Lab2PacientesDTO paciente, Long id);
 }
