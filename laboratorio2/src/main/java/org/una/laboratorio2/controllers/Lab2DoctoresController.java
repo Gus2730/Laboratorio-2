@@ -39,7 +39,7 @@ public class Lab2DoctoresController {
             return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable(value = "id") Long id) {
         try {
             return new ResponseEntity(ILab2DoctoresService.findById(id), HttpStatus.OK);
