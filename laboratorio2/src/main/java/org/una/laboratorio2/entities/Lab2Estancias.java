@@ -41,6 +41,7 @@ public class Lab2Estancias implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private static final long serialVersionUID = 1L;
 
     @ManyToOne
     @JoinColumn(name = "intervenciones_id")

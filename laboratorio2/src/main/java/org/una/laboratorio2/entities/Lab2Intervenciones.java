@@ -49,6 +49,7 @@ public class Lab2Intervenciones implements Serializable {
     @Column
     private boolean estado;
 
+    private static final long serialVersionUID = 1L;
 
     @Column(name = "fecha_ingreso", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
