@@ -5,6 +5,7 @@
  */
 package org.una.laboratorio2.dto;
 
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
