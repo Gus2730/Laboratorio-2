@@ -51,10 +51,10 @@ public class Lab2Pacientes implements Serializable {
     @Column
     private boolean estado;
 
-    @Column(name = "fecha_ingreso", updatable = false)
+    @Column(name = "fecha_registro", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
-    private Date fechaIngreso;
+    private Date fechaRegistro;
 
     @Column(name = "fecha_modificacion")
     @Setter(AccessLevel.NONE)
@@ -66,7 +66,7 @@ public class Lab2Pacientes implements Serializable {
     @PrePersist
     public void prePersist() {
         estado = true;
-        fechaIngreso = new Date();
+        fechaRegistro = new Date();
         fechaModificacion = new Date();
     }
 

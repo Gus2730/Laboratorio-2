@@ -5,6 +5,7 @@
  */
 package org.una.laboratorio2.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,7 +34,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Lab2Doctores {
+public class Lab2Doctores implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

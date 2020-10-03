@@ -31,7 +31,7 @@ public class Lab2PacientesDTO {
  
     private boolean estado;
 
-    private Date fechaIngreso;
+    private Date fechaRegistro;
 
     private Date fechaModificacion;
 }
