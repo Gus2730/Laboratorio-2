@@ -37,8 +37,9 @@ public class Lab2HistorialPacientesServiceImplementation implements ILab2Histori
     public Optional<Lab2HistorialPaciantesDTO> findById(Long id) {
         return (Optional<Lab2HistorialPaciantesDTO>)ConversionLista.oneToDto(ILab2HistorialPacientesRepository.findById(id),Lab2HistorialPaciantesDTO.class);
     }
-
+    
     @Override
+    @Transactional
     public Lab2HistorialPaciantesDTO create(Lab2HistorialPaciantesDTO Lab2HistorialPaciantes) {
         Lab2HistorialPaciantes pac = MapperUtils.EntityFromDto(Lab2HistorialPaciantes, Lab2HistorialPaciantes.class);
         pac = ILab2HistorialPacientesRepository.save(pac);
@@ -46,6 +47,7 @@ public class Lab2HistorialPacientesServiceImplementation implements ILab2Histori
     }
 
     @Override
+    @Transactional
     public Optional<Lab2HistorialPaciantesDTO> update(Lab2HistorialPaciantesDTO Lab2HistorialPaciantesDTO, Long id) {
         if (ILab2HistorialPacientesRepository.findById(id).isPresent()) {
             Lab2HistorialPaciantes user = MapperUtils.EntityFromDto(Lab2HistorialPaciantesDTO, Lab2HistorialPaciantes.class);

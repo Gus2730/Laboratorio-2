@@ -40,6 +40,7 @@ public class Lab2UnidadesServiceImplementation implements ILab2UnidadesService {
     }
 
     @Override
+    @Transactional
     public Lab2UnidadesDTO create(Lab2UnidadesDTO Lab2UnidadesDTO) {
         Lab2Unidades pac = MapperUtils.EntityFromDto(Lab2UnidadesDTO, Lab2Unidades.class);
         pac = ILab2UnidadesRepository.save(pac);
@@ -47,6 +48,7 @@ public class Lab2UnidadesServiceImplementation implements ILab2UnidadesService {
     }
 
     @Override
+    @Transactional
     public Optional<Lab2UnidadesDTO> update(Lab2UnidadesDTO usuario, Long id) {
         if (ILab2UnidadesRepository.findById(id).isPresent()) {
             Lab2Unidades user = MapperUtils.EntityFromDto(ILab2UnidadesRepository, Lab2Unidades.class);

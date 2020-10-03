@@ -41,6 +41,7 @@ public class Lab2PacientesServiceImplementation implements ILab2PacientesService
     }
 
     @Override
+    @Transactional
     public Lab2PacientesDTO create(Lab2PacientesDTO Lab2Pacientes) {
         Lab2Pacientes pac = MapperUtils.EntityFromDto(Lab2Pacientes, Lab2Pacientes.class);
         pac = ILab2PacientesRepository.save(pac);
@@ -48,6 +49,7 @@ public class Lab2PacientesServiceImplementation implements ILab2PacientesService
     }
 
     @Override
+    @Transactional
     public Optional<Lab2PacientesDTO> update(Lab2PacientesDTO Lab2Pacientes, Long id) {
         if (ILab2PacientesRepository.findById(id).isPresent()) {
             Lab2Pacientes user = MapperUtils.EntityFromDto(Lab2Pacientes, Lab2Pacientes.class);
