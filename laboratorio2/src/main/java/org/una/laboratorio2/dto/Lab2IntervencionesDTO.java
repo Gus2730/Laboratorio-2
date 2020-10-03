@@ -35,10 +35,10 @@ public class Lab2IntervencionesDTO {
     private Long id;
     
     private String sintoma;
-
-    private Lab2DoctoresDTO doctorId;
-     
+    
     private Lab2TratamientosDTO tratamientoId;
+    
+    private boolean estado;
 
     private Date fechaIngreso;
 }

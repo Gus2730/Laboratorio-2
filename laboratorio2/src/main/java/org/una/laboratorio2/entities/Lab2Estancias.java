@@ -50,7 +50,9 @@ public class Lab2Estancias implements Serializable {
     @JoinColumn(name = "paciente_id")
     private Lab2Pacientes pacienteId;
  
-   
+    @ManyToOne
+    @JoinColumn(name = "unidad_id")
+    private Lab2Unidades unidadId;
 
     @Column(name = "fecha_registro", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)

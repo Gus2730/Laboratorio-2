@@ -41,19 +41,19 @@ public class Lab2Intervenciones implements Serializable {
 
     @Column(length = 100)
     private String sintoma;
-
-    
-    @ManyToOne
-    @JoinColumn(name = "doctor_id")
-    private Lab2Doctores doctorId;
      
-     @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "tratamiento_id")
     private Lab2Tratamientos tratamientoId;
+     
+    @Column
+    private boolean estado;
+
 
     @Column(name = "fecha_ingreso", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
     private Date fechaIngreso;
+    
     
 }
