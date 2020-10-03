@@ -47,4 +47,12 @@ public class Lab2UnidadesController {
         }
 
     }
+    @GetMapping("/{id}/especialidades/{nombre}")
+    public ResponseEntity<?> findByCedulaAndPassword(@PathVariable(value = "id") Long id, @PathVariable(value = "nombre") String pass) {
+        try {
+            return new ResponseEntity<>(ILab2UnidadesService.findByUnidadDoctorEspecialidadId(id, pass), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
