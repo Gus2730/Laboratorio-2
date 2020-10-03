@@ -22,8 +22,6 @@ public interface ILab2DoctoresRepository extends JpaRepository<Lab2Doctores, Lon
 
     public List<Lab2Doctores> findByNombreCompletoContainingIgnoreCase(String nombreCompleto);
     
-    public List<Lab2Doctores> findByEspecialidad(String especialidad);
-    
-    
+    public List<Lab2Doctores> findByEspecialidad(String especialidad); 
     
 }
