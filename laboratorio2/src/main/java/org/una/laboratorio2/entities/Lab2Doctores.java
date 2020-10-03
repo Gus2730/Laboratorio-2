@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -46,8 +48,9 @@ public class Lab2Doctores implements Serializable {
     @Column(length = 25, unique = true)
     private String codigo;
     
-    @Column(length = 25)
-    private String especialidad;
+    @ManyToOne
+    @JoinColumn(name = "especialidad_id")
+    private Lab2Especialidades especialidadId;
  
     @Column
     private boolean estado;

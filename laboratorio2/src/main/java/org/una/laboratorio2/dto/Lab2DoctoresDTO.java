@@ -10,7 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.una.laboratorio2.entities.*;
 
 /**
  *
@@ -28,7 +27,7 @@ public class Lab2DoctoresDTO {
 
     private String codigo;
     
-    private String especialidad;
+    private Lab2EspecialidadesDTO especialidadId;
  
     private boolean estado;
 

@@ -36,24 +36,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Lab2HistorialPaciantes {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 150)
-    private String tratamiento;
-    
-    @Column(length = 100)
-    private String sintoma;
- 
     @Column
     private boolean estado;
-    
+
     @ManyToOne
-    @JoinColumn(name = "doctor_id")
-    private Lab2Doctores doctorId;
-     
-     @ManyToOne
     @JoinColumn(name = "paciente_id")
     private Lab2Pacientes pacienteId;
 
@@ -61,7 +52,12 @@ public class Lab2HistorialPaciantes {
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
     private Date fechaIngreso;
-    
+
+    @Column(name = "fecha_salida", updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    @Setter(AccessLevel.NONE)
+    private Date fechaSalida;
+
     private static final long serialVersionUID = 1L;
 
     @PrePersist

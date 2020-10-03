@@ -30,7 +30,7 @@ public class Lab2UnidadesDTO {
 
     private String planta;
 
-    private Lab2Doctores doctorId;
+    private Lab2DoctoresDTO doctorId;
 
     private boolean estado;
 
