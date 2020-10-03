@@ -9,6 +9,6 @@ package org.una.laboratorio2.entities;
  *
  * @author colo7
  */
-public class lab2_Pacientes {
+public class Lab2_Pacientes {
     
 }

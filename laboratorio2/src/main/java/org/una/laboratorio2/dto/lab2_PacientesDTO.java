@@ -11,6 +11,6 @@ import org.una.laboratorio2.entities.*;
  *
  * @author colo7
  */
-public class lab2_PacientesDTO {
+public class Lab2_PacientesDTO {
     
 }
