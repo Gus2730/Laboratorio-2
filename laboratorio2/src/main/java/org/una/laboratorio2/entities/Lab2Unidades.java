@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -50,8 +51,8 @@ public class Lab2Unidades {
     @Column(length = 25)
     private String planta;
     
-    @ManyToOne
-    @JoinColumn(name = "doctor_id")
+    @OneToOne
+    @JoinColumn(name = "doctor_id", unique = true, nullable = false)
     private Lab2Doctores doctorId;
  
     @Column
