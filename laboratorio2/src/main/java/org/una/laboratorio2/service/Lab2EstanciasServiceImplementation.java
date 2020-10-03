@@ -5,6 +5,7 @@
  */
 package org.una.laboratorio2.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,21 +22,21 @@ import org.una.laboratorio2.utils.MapperUtils;
  * @author Bosco
  */
 @Service
-public class Lab2EstanciasServiceImplementation implements ILab2EstanciasService{
+public class Lab2EstanciasServiceImplementation implements ILab2EstanciasService {
 
     @Autowired
     private ILab2EstanciasRepository ILab2EstanciasRepository;
-    
+
     @Transactional(readOnly = true)
     @Override
     public Optional<List<Lab2EstanciasDTO>> findAll() {
-       return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findAll()),Lab2EstanciasDTO.class);
+        return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findAll()), Lab2EstanciasDTO.class);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Optional<Lab2EstanciasDTO> findById(Long id) {
-        return (Optional<Lab2EstanciasDTO>)ConversionLista.oneToDto(ILab2EstanciasRepository.findById(id),Lab2EstanciasDTO.class);
+        return (Optional<Lab2EstanciasDTO>) ConversionLista.oneToDto(ILab2EstanciasRepository.findById(id), Lab2EstanciasDTO.class);
     }
 
     @Override
@@ -55,5 +56,15 @@ public class Lab2EstanciasServiceImplementation implements ILab2EstanciasService
             return null;
         }
     }
-    
+
+    @Override
+    public Optional<List<Lab2EstanciasDTO>> findByDoctorIdAndFechaRegistroBetween(Long id, Date star, Date end) {
+        return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByDoctorIdAndFechaRegistroBetween(id, star, end)), Lab2EstanciasDTO.class);
+    }
+
+    @Override
+    public Optional<List<Lab2EstanciasDTO>> findByIntervencionAndCodigo(Long id, String codigo) {
+         return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByIntervencionAndCodigo(id, codigo)), Lab2EstanciasDTO.class);
+    }
+
 }

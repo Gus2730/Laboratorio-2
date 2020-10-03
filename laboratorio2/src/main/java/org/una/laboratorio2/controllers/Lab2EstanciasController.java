@@ -5,6 +5,7 @@
  */
 package org.una.laboratorio2.controllers;
 
+import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +48,25 @@ public class Lab2EstanciasController {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+    }
+    @GetMapping("/doctor/{id}/fechaI/{ini}/fechaF/{fin}")//Puede que aqui sea nombreCompleto
+    public ResponseEntity<?> findByDoctorIdAndFechaRegistroBetween(@PathVariable(value = "id") Long id,@PathVariable(value = "ini")Date star,@PathVariable(value = "fin")Date end) {
+        try {
+            return new ResponseEntity(ILab2EstanciasService.findByDoctorIdAndFechaRegistroBetween(id,star,end), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    @GetMapping("/intervancion/{id}/codigo/{code}")//Puede que aqui sea nombreCompleto
+    public ResponseEntity<?> findByIntervencionAndCodigo(@PathVariable(value = "id") Long id,@PathVariable(value = "code")String codigo) {
+        try {
+            return new ResponseEntity(ILab2EstanciasService.findByIntervencionAndCodigo(id,codigo), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
     
 }
