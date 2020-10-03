@@ -16,12 +16,4 @@ import org.una.laboratorio2.entities.Lab2Doctores;
  */
 public interface ILab2DoctoresRepository extends JpaRepository<Lab2Doctores, Long> {
     
-    public List<Lab2Doctores> findByEstado(boolean estado);
-
-    public Lab2Doctores findByCodigo(String codigo);
-
-    public List<Lab2Doctores> findByNombreCompletoContainingIgnoreCase(String nombreCompleto);
-    
-    public List<Lab2Doctores> findByEspecialidad(String especialidad); 
-    
 }
