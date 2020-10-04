@@ -44,8 +44,8 @@ public class Lab2Estancias implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ManyToOne
-    @JoinColumn(name = "intervenciones_id")
-    private Lab2Intervenciones intervencionesId;
+    @JoinColumn(name = "intervencion_id")
+    private Lab2Intervenciones intervencionId;
      
      @ManyToOne
     @JoinColumn(name = "paciente_id")
@@ -55,14 +55,14 @@ public class Lab2Estancias implements Serializable {
     @JoinColumn(name = "unidad_id")
     private Lab2Unidades unidadId;
 
-    @Column(name = "fecha_registro", updatable = false)
+    @Column(name = "fecha_ingreso", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
-    private Date fechaRegistro;
+    private Date fechaingreso;
     
     @PrePersist
     public void prePersist() {
-        fechaRegistro = new Date();
+        fechaingreso = new Date();
     }
 
     @PreUpdate

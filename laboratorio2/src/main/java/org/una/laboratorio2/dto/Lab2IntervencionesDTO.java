@@ -37,8 +37,6 @@ public class Lab2IntervencionesDTO {
     private String sintoma;
     
     private Lab2TratamientosDTO tratamientoId;
-    
-    private boolean estado;
 
-    private Date fechaIngreso;
+    private Date fechaRegistro;
 }

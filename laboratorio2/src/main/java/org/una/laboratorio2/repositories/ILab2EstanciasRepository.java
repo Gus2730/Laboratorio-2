@@ -21,6 +21,6 @@ public interface ILab2EstanciasRepository extends JpaRepository<Lab2Estancias, L
     @Query(value = "SELECT t FROM Lab2Estancias t JOIN t.unidadId po JOIN po.doctorId u where po.codigo=:code and u.codigo=:codigo")
     public List<Lab2Estancias> findByCodigoAndEspecialidad(@Param("code")String code,@Param("codigo") String codigo);
     
-    @Query(value = "SELECT t FROM Lab2Estancias t JOIN t.intervencionesId po JOIN po.tratamientoId u where po.id=:id and u.codigo=:codigo")
+    @Query(value = "SELECT t FROM Lab2Estancias t JOIN t.intervencionId po JOIN po.tratamientoId u where po.id=:id and u.codigo=:codigo")
     public List<Lab2Estancias> findByIntervencionAndCodigo(@Param("id")Long intervencionId,@Param("codigo") String codigo);
 }

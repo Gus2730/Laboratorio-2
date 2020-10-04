@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -46,15 +47,17 @@ public class Lab2Intervenciones implements Serializable {
     @JoinColumn(name = "tratamiento_id")
     private Lab2Tratamientos tratamientoId;
      
-    @Column
-    private boolean estado;
-
     private static final long serialVersionUID = 1L;
 
-    @Column(name = "fecha_ingreso", updatable = false)
+    @Column(name = "fecha_registro", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
-    private Date fechaIngreso;
+    private Date fechaRegistro;
+    
+     @PrePersist
+    public void prePersist() {
+        fechaRegistro = new Date();
+    }
     
     
 }

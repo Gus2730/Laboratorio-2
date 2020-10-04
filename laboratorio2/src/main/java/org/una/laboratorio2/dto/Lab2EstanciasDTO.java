@@ -23,9 +23,9 @@ public class Lab2EstanciasDTO {
     
     private Long id;
     
-    private Date fechaRegistro;
+    private Date fechaingreso;
     
-    private Lab2IntervencionesDTO intervencionesId;
+    private Lab2IntervencionesDTO intervencionId;
     
     private Lab2PacientesDTO pacienteId;
     
