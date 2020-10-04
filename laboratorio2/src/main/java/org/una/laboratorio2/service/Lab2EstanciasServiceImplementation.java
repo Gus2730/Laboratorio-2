@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.una.laboratorio2.service;
 
 import java.util.Date;
@@ -59,13 +54,12 @@ public class Lab2EstanciasServiceImplementation implements ILab2EstanciasService
 
     @Override
     public Optional<List<Lab2EstanciasDTO>> findByCodigoDoctor(String codigo) {
-         return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByCodigoDoctor(codigo)), Lab2EstanciasDTO.class);
+        return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByCodigoDoctor(codigo)), Lab2EstanciasDTO.class);
     }
 
     @Override
     public Optional<List<Lab2EstanciasDTO>> findByTratamientoCodigo(String codigo) {
         return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByTratamientoCodigo(codigo)), Lab2EstanciasDTO.class);
     }
-
 
 }

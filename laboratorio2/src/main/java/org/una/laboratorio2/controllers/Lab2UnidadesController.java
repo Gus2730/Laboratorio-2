@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.una.laboratorio2.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +44,7 @@ public class Lab2UnidadesController {
 
     }
     @GetMapping("/especialidades/{nombre}")
-    public ResponseEntity<?> findByCedulaAndPassword(@PathVariable(value = "nombre") String nombre) {
+    public ResponseEntity<?> findByUnidadDoctorEspecialidadId(@PathVariable(value = "nombre") String nombre) {
         try {
             return new ResponseEntity<>(ILab2UnidadesService.findByUnidadDoctorEspecialidadId(nombre), HttpStatus.OK);
         } catch (Exception e) {

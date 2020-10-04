@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.una.laboratorio2.entities;
 
 import java.io.Serializable;
@@ -23,6 +18,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 /**
  *
  * @author colo7
@@ -34,7 +30,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Lab2Pacientes implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -44,10 +40,10 @@ public class Lab2Pacientes implements Serializable {
 
     @Column(length = 25)
     private String seguro;
-    
+
     @Column(length = 25)
     private String edad;
- 
+
     @Column
     private boolean estado;
 
@@ -60,7 +56,7 @@ public class Lab2Pacientes implements Serializable {
     @Setter(AccessLevel.NONE)
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaModificacion;
-    
+
     private static final long serialVersionUID = 1L;
 
     @PrePersist
@@ -74,6 +70,5 @@ public class Lab2Pacientes implements Serializable {
     public void preUpdate() {
         fechaModificacion = new Date();
     }
-    
-    
+
 }

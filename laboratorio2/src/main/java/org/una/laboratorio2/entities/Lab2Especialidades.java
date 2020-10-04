@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.una.laboratorio2.entities;
 
 import java.util.Date;
@@ -11,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -46,7 +39,7 @@ public class Lab2Especialidades {
 
     @Column(length = 100)
     private String descripcion;
-      
+
     @Column(name = "fecha_registro", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
@@ -57,10 +50,6 @@ public class Lab2Especialidades {
     @PrePersist
     public void prePersist() {
         fechaRegistro = new Date();
-    }
-
-    @PreUpdate
-    public void preUpdate() {
     }
 
 }

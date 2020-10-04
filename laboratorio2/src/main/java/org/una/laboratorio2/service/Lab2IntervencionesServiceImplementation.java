@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.una.laboratorio2.service;
 
 import java.util.List;
@@ -21,21 +16,21 @@ import org.una.laboratorio2.utils.MapperUtils;
  * @author Bosco
  */
 @Service
-public class Lab2IntervencionesServiceImplementation implements ILab2IntervencionesService{
+public class Lab2IntervencionesServiceImplementation implements ILab2IntervencionesService {
 
     @Autowired
     private ILab2IntervencionesRepository ILab2IntervencionesRepository;
-    
+
     @Override
     @Transactional(readOnly = true)
     public Optional<List<Lab2IntervencionesDTO>> findAll() {
-        return (Optional<List<Lab2IntervencionesDTO>>) ConversionLista.findList((ILab2IntervencionesRepository.findAll()),Lab2IntervencionesDTO.class);
+        return (Optional<List<Lab2IntervencionesDTO>>) ConversionLista.findList((ILab2IntervencionesRepository.findAll()), Lab2IntervencionesDTO.class);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Optional<Lab2IntervencionesDTO> findById(Long id) {
-        return (Optional<Lab2IntervencionesDTO>)ConversionLista.oneToDto(ILab2IntervencionesRepository.findById(id),Lab2IntervencionesDTO.class);
+        return (Optional<Lab2IntervencionesDTO>) ConversionLista.oneToDto(ILab2IntervencionesRepository.findById(id), Lab2IntervencionesDTO.class);
     }
 
     @Override
@@ -56,6 +51,4 @@ public class Lab2IntervencionesServiceImplementation implements ILab2Intervencio
         }
     }
 
-    
-    
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.una.laboratorio2.service;
 
 import java.util.List;
@@ -22,7 +17,7 @@ import org.una.laboratorio2.utils.MapperUtils;
  * @author Bosco
  */
 @Service
-public class Lab2TratamientosServiceImplementation implements ILab2TratamientosService{
+public class Lab2TratamientosServiceImplementation implements ILab2TratamientosService {
 
     @Autowired
     private ILab2TratamientosRepository ILab2TratamientosRepository;
@@ -30,13 +25,13 @@ public class Lab2TratamientosServiceImplementation implements ILab2TratamientosS
     @Override
     @Transactional(readOnly = true)
     public Optional<List<Lab2TratamientosDTO>> findAll() {
-        return (Optional<List<Lab2TratamientosDTO>>) ConversionLista.findList((ILab2TratamientosRepository.findAll()),Lab2TratamientosDTO.class);
+        return (Optional<List<Lab2TratamientosDTO>>) ConversionLista.findList((ILab2TratamientosRepository.findAll()), Lab2TratamientosDTO.class);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Optional<Lab2TratamientosDTO> findById(Long id) {
-        return (Optional<Lab2TratamientosDTO>)ConversionLista.oneToDto(ILab2TratamientosRepository.findById(id),Lab2TratamientosDTO.class);
+        return (Optional<Lab2TratamientosDTO>) ConversionLista.oneToDto(ILab2TratamientosRepository.findById(id), Lab2TratamientosDTO.class);
     }
 
     @Override
@@ -56,7 +51,5 @@ public class Lab2TratamientosServiceImplementation implements ILab2TratamientosS
             return null;
         }
     }
-    
-    
-    
+
 }
