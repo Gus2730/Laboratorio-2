@@ -49,20 +49,20 @@ public class Lab2EstanciasController {
         }
 
     }
-    @GetMapping("/codigoUnidad/{codigo}/codigoDoctor/{cod}")//Puede que aqui sea nombreCompleto
-    public ResponseEntity<?> findByDoctorIdAndFechaRegistroBetween(@PathVariable(value = "codigo") String codigo,@PathVariable(value = "cod")String especialidad) {
+    @GetMapping("/doctorCodigo/{codigo}")
+    public ResponseEntity<?> findByCodigoDoctor(@PathVariable(value = "codigo") String codigo) {
         try {
-            return new ResponseEntity(ILab2EstanciasService.findByCodigoAndEspecialidad(codigo,especialidad), HttpStatus.OK);
+            return new ResponseEntity(ILab2EstanciasService.findByCodigoDoctor(codigo), HttpStatus.OK);
 
         } catch (Exception e) {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
     
-    @GetMapping("/intervencion/{id}/codigo/{code}")//Puede que aqui sea nombreCompleto
-    public ResponseEntity<?> findByIntervencionAndCodigo(@PathVariable(value = "id") Long id,@PathVariable(value = "code")String codigo) {
+    @GetMapping("/tratamientoCodigo/{code}")
+    public ResponseEntity<?> findByTratamientoCodigo(@PathVariable(value = "code")String codigo) {
         try {
-            return new ResponseEntity(ILab2EstanciasService.findByIntervencionAndCodigo(id,codigo), HttpStatus.OK);
+            return new ResponseEntity(ILab2EstanciasService.findByTratamientoCodigo(codigo), HttpStatus.OK);
 
         } catch (Exception e) {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);

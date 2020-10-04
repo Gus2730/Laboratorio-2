@@ -22,6 +22,8 @@ public interface ILab2EstanciasService {
     public Lab2EstanciasDTO create(Lab2EstanciasDTO estancia);
 
     public Optional<Lab2EstanciasDTO> update(Lab2EstanciasDTO estancia, Long id);
-    public Optional<List<Lab2EstanciasDTO>> findByCodigoAndEspecialidad(String codigo,String codi);
-    public Optional<List<Lab2EstanciasDTO>> findByIntervencionAndCodigo(Long id,String codigo);
+    
+    public Optional<List<Lab2EstanciasDTO>> findByCodigoDoctor(String codigo);
+    
+    public Optional<List<Lab2EstanciasDTO>> findByTratamientoCodigo(String codigo);
 }

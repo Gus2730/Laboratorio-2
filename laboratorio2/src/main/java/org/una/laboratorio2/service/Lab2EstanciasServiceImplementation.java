@@ -58,13 +58,13 @@ public class Lab2EstanciasServiceImplementation implements ILab2EstanciasService
     }
 
     @Override
-    public Optional<List<Lab2EstanciasDTO>> findByIntervencionAndCodigo(Long id, String codigo) {
-         return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByIntervencionAndCodigo(id, codigo)), Lab2EstanciasDTO.class);
+    public Optional<List<Lab2EstanciasDTO>> findByCodigoDoctor(String codigo) {
+         return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByTratamientoCodigo(codigo)), Lab2EstanciasDTO.class);
     }
 
     @Override
-    public Optional<List<Lab2EstanciasDTO>> findByCodigoAndEspecialidad(String codigo, String codi) {
-        return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByCodigoAndEspecialidad(codigo, codi)), Lab2EstanciasDTO.class);
+    public Optional<List<Lab2EstanciasDTO>> findByTratamientoCodigo(String codigo) {
+        return (Optional<List<Lab2EstanciasDTO>>) ConversionLista.findList((ILab2EstanciasRepository.findByTratamientoCodigo(codigo)), Lab2EstanciasDTO.class);
     }
 
 
