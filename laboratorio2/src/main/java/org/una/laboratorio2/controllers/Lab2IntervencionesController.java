@@ -21,6 +21,8 @@ import org.una.laboratorio2.service.ILab2IntervencionesService;
  *
  * @author Bosco
  */
+
+
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RestController
 @RequestMapping("/intervenciones")
