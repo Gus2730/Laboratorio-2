@@ -16,7 +16,7 @@ import org.una.laboratorio2.entities.Lab2Unidades;
  * @author colo7
  */
 public interface ILab2UnidadesRepository extends JpaRepository<Lab2Unidades, Long>{
-     @Query(value = "SELECT t FROM Lab2Unidades t JOIN t.doctorId po JOIN po.especialidadId u where t.id=:id and u.nombre=:nombre")
-    public List<Lab2Unidades> findByUnidadDoctorEspecialidadId(@Param("id")Long doctorId,@Param("nombre") String nombre);
+     @Query(value = "SELECT t FROM Lab2Unidades t JOIN t.doctorId po JOIN po.especialidadId u where u.nombre=:nombre")
+    public List<Lab2Unidades> findByUnidadDoctorEspecialidadId(@Param("nombre") String nombre);
     
 }

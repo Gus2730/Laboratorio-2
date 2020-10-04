@@ -22,5 +22,5 @@ public interface ILab2UnidadesService {
 
     public Optional<Lab2UnidadesDTO> update(Lab2UnidadesDTO unidad, Long id);
     
-    public Optional<List<Lab2UnidadesDTO>> findByUnidadDoctorEspecialidadId(Long id,String nombre);
+    public Optional<List<Lab2UnidadesDTO>> findByUnidadDoctorEspecialidadId(String nombre);
 }

@@ -59,7 +59,7 @@ public class Lab2UnidadesServiceImplementation implements ILab2UnidadesService {
         }
     }
     @Override
-    public Optional<List<Lab2UnidadesDTO>> findByUnidadDoctorEspecialidadId(Long id,String nombre) {
-        return (Optional<List<Lab2UnidadesDTO>>) ConversionLista.findList((ILab2UnidadesRepository.findByUnidadDoctorEspecialidadId(id, nombre)), Lab2UnidadesDTO.class);
+    public Optional<List<Lab2UnidadesDTO>> findByUnidadDoctorEspecialidadId(String nombre) {
+        return (Optional<List<Lab2UnidadesDTO>>) ConversionLista.findList((ILab2UnidadesRepository.findByUnidadDoctorEspecialidadId( nombre)), Lab2UnidadesDTO.class);
     }
 }
